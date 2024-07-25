@@ -18,7 +18,7 @@ class PenginapanController extends BaseController
     public function form_create()
     {
         $data = [
-            'title' => 'Tambah penginapan',
+            'title' => 'Tambah Penginapan',
             'validation' => \Config\Services::validation(),
         ];
 

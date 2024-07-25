@@ -18,7 +18,7 @@ class WisataController extends BaseController
     public function form_create()
     {
         $data = [
-            'title' => 'Tambah wisata',
+            'title' => 'Tambah Wisata',
             'validation' => \Config\Services::validation(),
         ];
 

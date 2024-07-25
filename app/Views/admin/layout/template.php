@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('public/assets-admin'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 
     <!-- untuk section css custom -->
     <?= $this->renderSection('style'); ?>

@@ -112,7 +112,8 @@
                     </div>
 
                     <div class="mb-3 justify-content-end d-flex">
-                        <button class="btn btn-primary btn-sm">Ubah</button>
+                        <a href="<?= base_url('wisata') ?>" class="btn btn-secondary btn-sm mt-2" style="margin-right: 10px;">Kembali</a>
+                        <button class="btn btn-primary btn-sm mt-2">Ubah</button>
                     </div>
                 </form>
             </div>
@@ -125,10 +126,43 @@
 <?= $this->endSection(); ?>
 
 <?= $this->Section('script'); ?>
-<script src="https://cdn.ckeditor.com/4.21.0/basic/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('deskripsi');
-</script>
+<script type="importmap">
+            {
+                "imports": {
+                    "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.js",
+                    "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/42.0.1/"
+                }
+            }
+        </script>
+
+        <script type="module">
+            import {
+                ClassicEditor,
+                Essentials,
+                Bold,
+                Italic,
+                Paragraph,
+                Highlight,
+                Link,
+                List,
+                Strikethrough,
+                TodoList,
+                Underline,
+                Undo
+            } from 'ckeditor5';
+
+            ClassicEditor
+                .create( document.querySelector( '#deskripsi' ), {
+                    plugins: [ Essentials, Bold, Italic, Paragraph, Highlight, Link, List, Strikethrough, TodoList, Underline, Undo ],
+                    toolbar: {
+                        items: [
+                            'undo', 'redo', '|', 'bold', 'italic', 'underline', 'strikethrough', '|', 'link', 'highlight', '|', 'bulletedList', 'numberedList', 'todoList'
+                        ]
+                    }
+                } )
+                .then( /* ... */ )
+                .catch( /* ... */ );
+        </script>
 <script>
     function previewImg() {
         const gambar = document.querySelector('#gambar');
